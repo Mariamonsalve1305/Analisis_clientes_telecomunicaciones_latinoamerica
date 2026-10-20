@@ -42,10 +42,4 @@ Puedes explorar el código fuente, los gráficos y las conclusiones directamente
 
 👉 **[Ver el Notebook completo de Análisis (S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb)](./S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb)**
 
----
-
-## 📌 Estructura del Repositorio
-
-```text
-├── S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb   # Notebook con el código y visualización del análisis
-└── README.md                                                  # Documentación del proyecto
+---                                              # Documentación del proyecto
