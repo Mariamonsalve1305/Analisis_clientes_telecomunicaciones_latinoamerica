@@ -26,6 +26,24 @@ El objetivo principal es examinar los patrones de comportamiento de los clientes
 
 ---
 
+## 📊 Análisis Ejecutivo e *Insights*
+
+⚠️ **Calidad y Limpieza de Datos (Data Hygiene)**
+- **Tipos de datos erróneos:** Inconsistencias detectadas en los atributos de fecha (*date*).
+- **Valores nulos:** Presencia de nulos en `Churn_date` (descartados al no formar parte del alcance analítico actual).
+- **Falsos nulos:** Detección de registros vacíos o anómalos en el atributo de ubicación (`ciudad`).
+
+🔍 **Segmentación Demográfica y de Comportamiento**
+- **Segmentos por Edad:** Se identifica que los **adultos** son los principales usuarios del servicio tradicional, mientras que la participación de los **jóvenes** es baja. 
+  - *Hipótesis:* Los jóvenes priorizan canales de comunicación digital (redes sociales y aplicaciones de mensajería), haciendo menor uso de llamadas y mensajes de texto tradicionales.
+- **Nivel de Uso:** Se observa una alta asimetría; cerca del **90% de los usuarios** se agrupa en un clúster de bajo consumo (menos de 10 llamadas y 10 mensajes), frente a un nicho específico de *power users* con un consumo aproximado de 250 interacciones.
+
+💡 **Recomendaciones Estratégicas**
+- **Ampliar el scope de análisis:** Incorporar métricas de consumo de datos móviles y tráfico en redes sociales para capturar con precisión el comportamiento del segmento joven.
+- **Auditoría de captura:** Revisar los procesos de registro en el atributo `duration` (minutos de llamada) para asegurar la correcta captura de los datos y evitar sesgos analíticos.
+
+---
+
 ## 🛠️ Tecnologías y Librerías Utilizadas
 
 - **Lenguaje:** Python 3.x
@@ -42,4 +60,4 @@ Puedes explorar el código fuente, los gráficos y las conclusiones directamente
 
 👉 **[Ver el Notebook completo de Análisis (S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb)](./S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb)**
 
----                                              # Documentación del proyecto
+---
