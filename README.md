@@ -1,54 +1,58 @@
-# 📊 Análisis de Comportamiento de Clientes — ConnectaTel LATAM
+# 📊 Análisis de Retención y Comportamiento de Clientes - ConnectaTel (LATAM)
 
-## 🎯 Objetivo del Proyecto
-El objetivo principal de este proyecto es evaluar y comprender de forma integral el **comportamiento de consumo de los clientes** de la empresa de telecomunicaciones ConnectaTel en Latinoamérica dentro del periodo registrado **hasta el año 2024**.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557c?style=for-the-badge&logo=python&logoColor=white)
+![Seaborn](https://img.shields.io/badge/Seaborn-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SciPy / Stats](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
+![Open in Colab](https://img.shields.io/badge/Open%20in-Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
 
-A través de un enfoque programático, el análisis busca:
-* Construir un **perfil estadístico** detallado de los usuarios.
-* Detectar **comportamientos atípicos** y anomalías en el uso de los servicios.
-* Estructurar **segmentos de clientes** basados en patrones reales de consumo.
-* Proporcionar insights accionables para **diseñar estrategias de retención de clientes** (reducción de *churn*) y proponer **mejoras en la oferta comercial** de los planes de la empresa.
-
----
-
-## 💾 Datasets Utilizados
-El análisis se realiza mediante la integración y el procesamiento de tres conjuntos de datos principales:
-
-1. **`plans.csv`**: Contiene las especificaciones comerciales de las tarifas vigentes (`Basico` y `Premium`). Incluye variables como precio base mensual, minutos/GB/mensajes incluidos y los costes adicionales por unidad extra.
-2. **`users.csv`**: Base de datos de los usuarios registrados. Almacena información sobre edad, ciudad de residencia, fecha de registro, tipo de plan y fecha de cancelación (`churn_date`).
-3. **`usage.csv`**: Detalle transaccional de la utilización real del servicio. Registra cada evento identificando si es una llamada o mensaje de texto, su fecha y sus métricas asociadas (duración en minutos o longitud del mensaje).
+[![Ejecutar en Google Colab](https://img.shields.io/badge/🚀_Ejecutar_Notebook-Google_Colab-orange?style=for-the-badge&logo=googlecolab)](https://colab.research.google.com/github/Mariamonsalve1305/Analisis_clientes_telecomunicaciones_latinoamerica/blob/main/S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb)
 
 ---
 
-## 🛠️ Etapas del Análisis Realizadas
+## 📝 Descripción del Proyecto
 
-### 1. Carga y Exploración Inicial
-* Importación del stack analítico esencial de Python (`pandas`, `numpy`, `matplotlib`, `seaborn`).
-* Auditoría estructural preliminar usando métodos de inspección dimensional (`.shape`, `.head()`, `.info()`) para validar la correcta lectura en memoria de los tipos de datos primarios.
+Este proyecto realiza un **Análisis Exploratorio de Datos (EDA)** y pruebas de hipótesis estadísticas sobre la base de usuarios de **ConnectaTel**, una empresa del sector de telecomunicaciones en Latinoamérica. 
 
-### 2. Identificación y Diagnóstico de Calidad de Datos
-* **Análisis de Ausencias Legítimas vs. Anomalías (MAR/MCAR):** Se determinó matemáticamente que los valores nulos en `duration` y `length` corresponden a la naturaleza del servicio transaccionado (los mensajes no tienen duración en minutos y las llamadas no poseen longitud de caracteres).
-* **Detección de Datos Inválidos (*Sentinels*):** Localización de registros erróneos en variables clave como valores de edad fuera de rango biológico (ej. `-999` en la columna `age`) que sesgan la media y desviación estándar de los perfiles de usuario.
-* **Inconsistencias Categóricas:** Identificación de caracteres de ruido (como `?`) en campos de ubicación geográfica (`city`).
-
-### 3. Limpieza, Imputación y Transformación *(Siguientes pasos)*
-* Tratamiento y corrección de los tipos de datos (conversión de formatos `string`/`object` a tipos temporales `datetime` para columnas de fechas).
-* Reemplazo estratégico o imputación de valores centinela (`-999`) basándose en medidas de tendencia central no sesgadas.
-
-### 4. Análisis Estadístico y Segmentación *(Etapas de conclusión)*
-* Agregación de consumos mensuales por usuario.
-* Cálculo de ingresos generados por excesos de consumo.
-* Modelado de comportamiento y visualización gráfica de patrones de abandono del cliente.
+El objetivo principal es entender los patrones de comportamiento de los clientes, evaluar métricas de consumo/facturación e identificar los principales factores de riesgo que inciden en la pérdida de clientes (*Churn*), proporcionando recomendaciones estratégicas basadas en datos para los equipos de Negocio y Crecimiento.
 
 ---
 
-## 🚀 Cómo Ejecutar el Notebook
+## 🎯 Objetivos Principales
 
-Este entorno está configurado para ejecutarse de manera óptima utilizando **Google Colab** o un servidor **Jupyter Notebook** local.
-
-### Opción Recomendada: Google Colab
-1. Ve a [Google Colab](https://colab.research.google.com/).
-2. Selecciona la pestaña **Subir / Upload** y selecciona el archivo `.ipynb` de este repositorio.
-3. Para asegurar que el notebook acceda a los archivos `.csv` correspondientes, debes estructurar un directorio con el nombre `datasets` en la raíz de almacenamiento temporal de tu sesión de Colab.
+1. **Estructuración y Limpieza de Datos:** Procesamiento de variables categóricas y numéricas, manejo de valores nulos, registros duplicados y tratamiento de *outliers*.
+2. **Análisis Exploratorio de Datos (EDA):** Identificación de patrones de consumo, hábitos de uso de servicios y comportamiento de facturación en la región.
+3. **Pruebas de Hipótesis Estadísticas:** Validación rigurosa de suposiciones de negocio mediante pruebas de hipótesis sobre métricas clave (ingresos, hábitos de contratación y fidelidad del usuario).
+4. **Insights y Recomendaciones:** Generación de hallazgos accionables para la optimización de planes y estrategias de retención.
 
 ---
+
+## 🛠️ Tecnologías y Librerías Utilizadas
+
+- **Lenguaje:** Python 3.x
+- **Manipulación de Datos:** `pandas`, `numpy`
+- **Visualización de Datos:** `matplotlib`, `seaborn`
+- **Análisis Estadístico:** `scipy.stats`
+- **Entorno de Trabajo:** Jupyter Notebooks / Google Colab
+
+---
+
+## 🚀 Cómo Ejecutar este Proyecto
+
+Puedes revisar el código e interactuar con el análisis de dos maneras:
+
+1. **Directamente en la nube (Recomendado):**  
+   Haz clic en el siguiente botón para abrir y ejecutar el notebook directamente en Google Colab:  
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mariamonsalve1305/Analisis_clientes_telecomunicaciones_latinoamerica/blob/main/S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb)
+
+2. **De forma local:**
+   ```bash
+   # Clonar el repositorio
+   git clone [https://github.com/Mariamonsalve1305/Analisis_clientes_telecomunicaciones_latinoamerica.git](https://github.com/Mariamonsalve1305/Analisis_clientes_telecomunicaciones_latinoamerica.git)
+
+   # Navegar al directorio
+   cd Analisis_clientes_telecomunicaciones_latinoamerica
+
+   # Abrir Jupyter Notebook o VS Code
+   jupyter notebook S7_Version_Estudiante_Project_ConnectaTel_aprobado.ipynb
